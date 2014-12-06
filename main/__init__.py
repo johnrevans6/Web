@@ -25,3 +25,5 @@ app.secret_key = 'K0D1nG'
 toolbar = DebugToolbarExtension(app)
 
 db = MongoEngine(app)
+
+import main.routes

@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    {% block head %}
+        <title>{% block title %}Hawaii Hackers{% endblock %}</title>        
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/0.9.16/socket.io.min.js"></script>
+        <script src="{{ url_for('static', filename='js/selector.js') }}"></script>        
+        <script src="{{ url_for('static', filename='js/driver.js') }}"></script>
+        
+    {% endblock %}
+</head>
+<body>
+<div class=container>
+{% block content %}
+    <h3>Hawaii Hackers Universal Translator</h3>    
+     <form id="send" method='POST' action='#'>
+        
+        <div class="row"><div class="col-md-6"><h3>Message</h3></div>
+        <div class="row">
+            <div class="col-md-6">                
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <textarea class="form-control" rows="5" type="text" name="broadcast_data" id="broadcast_data" placeholder="Message"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <input class="form-control" type="submit" value="Send"/>
+            </div>
+        </div>            
+    </div>
+    </form>
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Receive:</h2>
+        </div>
+    </div>
+    <div class="row">
+            <div class="col-md-6">
+                <div class="btn-group">                   
+                    <button type="button" class="btn btn-default">Language</button>
+                    <button type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle"><span class="caret"></span></button>
+                    <ul id="to" class="dropdown-menu">
+                        <li><a href="#" data-value="en">English</a></li>
+                        <li><a href="#" data-value="fr">French</a></li>
+                        <li><a href="#" data-value="es">Spanish</a></li>
+                        <li><a href="#" data-value="de">German</a></li>
+                        <li><a href="#" data-value="it">Italian</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#" data-value="yo">Yoda</a></li>
+                    </ul>                    
+                </div>
+            </div>
+        </div>
+    <div id="log"></div>
+{% endblock %}
+
+</div>
+
+
+</body>
+</html>
